@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,68 +10,6 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-signin-client_id" content="278011061671-pedufnfh1qgm3qqrtvvvae7v7he527b5.apps.googleusercontent.com">
-
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-
-        // Load the Visualization API and the corechart package.
-        google.charts.load('current', { 'packages': ['corechart'] });
-
-        // Set a callback to run when the Google Visualization API is loaded.
-        google.charts.setOnLoadCallback(drawChart);
-
-        // Callback that creates and populates a data table,
-        // instantiates the pie chart, passes in the data and
-        // draws it.
-        function drawChart() {
-
-            // Create the data table.
-        
-        //    var data = new google.visualization.DataTable();
-        //   data.addColumn('string', 'Topping');
-        //    data.addColumn('number', 'Puntos');
-        //    data.addRows([
-        //        ['Venados', 500],
-        //        ['Cuervos', 415],
-        //        ['Patos', 400],
-        //        ['Pavorreales', 250]
-        //    ]); 
-
-           var data = google.visualization.arrayToDataTable([
-                ["Casa", "Puntos", { role: "style" }],
-                ["Venados", 750, "red"],
-                ["Cuervos", 600, "blue"],
-                ["Patos", 500, "silver"],
-                ["Gallinas", 475, "yellow"],
-                ["Pavorreales", 400,"green"]
-            ]);
-
-           var view = new google.visualization.DataView(data);
-            view.setColumns([0, 1,
-                {
-                    calc: "stringify",
-                    sourceColumn: 1,
-                    type: "string",
-                    role: "annotation"
-                },
-                2]);
-
-            // Set chart options
-            var options = {
-                title: "Puntos por casa a la fecha",
-                width: 800,
-                height: 600,
-                bar: { groupWidth: "95%" },
-                legend: { position: "none" },
-            };
-            
-            
-            // Instantiate and draw our chart, passing in some options.
-            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-            chart.draw(view, options);
-        }
-    </script>
 </head>
 
 <body>
@@ -88,18 +25,15 @@
                     <a href="casas.html">Casas</a>
                 </li>
                 <li>
-                    <a href="">Inicia sesión</a>
+                   <a href="">Inicia sesión</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <!-- Cuerpo de la página principal-->
-    <!-- Display de la grafica-->
-    <div id="columnchart_values"></div>
-
+    
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
     <footer class="page-footer teal darken-4">
         <div class="container">
             <div class="row">
@@ -128,7 +62,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2018 Copyright
+                © 2018 Copyright 
                 <a class="grey-text text-lighten-4 right">Creado por Ben, Marcel, JC, Jose Luis</a>
             </div>
         </div>
