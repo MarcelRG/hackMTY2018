@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="278011061671-pedufnfh1qgm3qqrtvvvae7v7he527b5.apps.googleusercontent.com">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="grey darken-2">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">ComUni</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="puntuacion.html">Puntuación</a>
+                </li>
+                <li>
+                    <a href="badges.html">Casas</a>
+                </li>
+                <li>
+                   <a href="collapsible.html">Inicia sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cuerpo de la página principal-->
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br> <br>
+                <img class = "header center" src="casas.png">
+                <br>
+                <h1 class="header center teal-text s12 light">¡Bienvenido a las casas!</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">¡No te olvides de ir a eventos para seguir sumando puntos para tu casa!</h5>
+                </div>
+                <div class="row center">
+                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                </div>
+                <br>
+                <br>
+    
+            </div>
+        </div>
+        <div class="parallax">
+            <img src="fondocool.jpg" alt="Unsplashed background img 1">
+        </div>
+    </div>
+
+    <h5 class="header col s12 light">Las casas fueron un proyecto hecho por la sociedad de alumnos de ITC 2017-2018, la idea era integrar a los alumnos de nuevo ingreso e incitarlos a participar en diversos eventos de su carrera</h5>
+    
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <footer class="page-footer teal darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Estas en el fondo</h5>
+                    <p class="grey-text text-lighten-4">Probablemente deberias estar arriba, pero por si acasi aqui hay links para ayudarte.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Inicio</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Puntuación</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Casas</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Inicia sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright 
+                <a class="grey-text text-lighten-4 right">Creado por Ben, Marcel, JC, Jose Luis</a>
+            </div>
+        </div>
+    </footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBhoALPmig8NORaJ5uV9XPx3EFeZdAcm54",
+            authDomain: "casastec-f5d5c.firebaseapp.com",
+            databaseURL: "https://casastec-f5d5c.firebaseio.com",
+            projectId: "casastec-f5d5c",
+            storageBucket: "casastec-f5d5c.appspot.com",
+            messagingSenderId: "278011061671"
+        };
+        firebase.initializeApp(config);
+    </script>
+</body>
+
+</html>
