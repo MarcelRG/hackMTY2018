@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="278011061671-pedufnfh1qgm3qqrtvvvae7v7he527b5.apps.googleusercontent.com">
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+            // Create the data table.
+        
+        //    var data = new google.visualization.DataTable();
+        //   data.addColumn('string', 'Topping');
+        //    data.addColumn('number', 'Puntos');
+        //    data.addRows([
+        //        ['Venados', 500],
+        //        ['Cuervos', 415],
+        //        ['Patos', 400],
+        //        ['Pavorreales', 250]
+        //    ]); 
+
+           var data = google.visualization.arrayToDataTable([
+                ["Casa", "Puntos", { role: "style" }],
+                ["Venados", 750, "red"],
+                ["Cuervos", 600, "blue"],
+                ["Patos", 500, "silver"],
+                ["Gallinas", 475, "yellow"],
+                ["Pavorreales", 400,"green"]
+            ]);
+
+           var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            // Set chart options
+            var options = {
+                title: "Puntos por casa a la fecha",
+                width: 800,
+                height: 600,
+                bar: { groupWidth: "95%" },
+                legend: { position: "none" },
+            };
+            
+            
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+            chart.draw(view, options);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="grey darken-2">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">ComUni</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="puntuacion.html">Puntuación</a>
+                </li>
+                <li>
+                    <a href="badges.html">Casas</a>
+                </li>
+                <li>
+                    <a href="collapsible.html">Inicia sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cuerpo de la página principal-->
+    <!-- Display de la grafica-->
+    <div id="columnchart_values"></div>
+
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <footer class="page-footer teal darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Estas en el fondo</h5>
+                    <p class="grey-text text-lighten-4">Probablemente deberias estar arriba, pero por si acasi aqui hay links para ayudarte.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Inicio</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Puntuación</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Casas</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Inicia sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright
+                <a class="grey-text text-lighten-4 right">Creado por Ben, Marcel, JC, Jose Luis</a>
+            </div>
+        </div>
+    </footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBhoALPmig8NORaJ5uV9XPx3EFeZdAcm54",
+            authDomain: "casastec-f5d5c.firebaseapp.com",
+            databaseURL: "https://casastec-f5d5c.firebaseio.com",
+            projectId: "casastec-f5d5c",
+            storageBucket: "casastec-f5d5c.appspot.com",
+            messagingSenderId: "278011061671"
+        };
+        firebase.initializeApp(config);
+    </script>
+</body>
+
+</html>
